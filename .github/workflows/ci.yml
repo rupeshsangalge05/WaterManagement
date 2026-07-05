@@ -32,7 +32,7 @@ jobs:
         
       - name: Install frontend dependencies
         working-directory: client
-        run: npm install
+        run: npm ci
 
       - name: Lint frontend
         working-directory: client
