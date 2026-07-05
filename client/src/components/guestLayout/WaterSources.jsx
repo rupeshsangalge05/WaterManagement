@@ -1,15 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {
-  Row,
-  Col,
-  Card,
-  ProgressBar,
-  Container,
-  Spinner,
-  Alert,
-  Image,
-} from "react-bootstrap";
+import { Row,Col,Card,ProgressBar,Container,Spinner,Alert,Image} from "react-bootstrap";
 
 const WaterTankWithBootstrap = () => {
   const [waterSources, setWaterSources] = useState([]);

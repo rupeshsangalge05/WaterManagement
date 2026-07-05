@@ -258,14 +258,14 @@ export const respondToComplaint = async (req, res) => {
 export const getContacts = async (req, res) => {
   try {
     // const contact = Contact.findOne({ email })
-    const contacts = Contact.find().sort({ crearedAt: -1 })
-    if (!contacts) res.status(400).json({ message: "Contact not found" })
+    const contacts = Contact.find().sort({ createdAt: -1 });
+    if (!contacts) res.status(400).json({ message: "Contact not found" });
 
     // res.status(200).json({contacts})
   } catch (error) {
-    res.status(500).json({ message: "Server error", error })
+    res.status(500).json({ message: "Server error", error });
   }
-}
+};
 
 
 export const getEmployeesByStatus = async (req, res) => {

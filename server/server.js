@@ -12,7 +12,7 @@ import AdminRouter from './routes/AdminRoutes.js';
 import UserRouter from './routes/UserRoutes.js';
 import EmployeeRouter from './routes/EmployeeRoutes.js';
 import WaterSourceRouter from './routes/WaterSourceRoutes.js';
-import ContactRouter from './routes/ContactRoutes.js'
+import ContactRouter from './routes/ContactRoutes.js';
 import WaterTimetableRouter from './routes/WaterTimetableRoutes.js';
 
 dotenv.config();
@@ -106,7 +106,7 @@ app.use('/timetable', WaterTimetableRouter);
 
 // Error Handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error(err.stack, next);
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
@@ -115,5 +115,5 @@ const PORT = process.env.PORT || 8000;
 // app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
 
 app.listen(5000, '0.0.0.0', () => {
-  console.log("Server is running on http://localhost:5000");
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

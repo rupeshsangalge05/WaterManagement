@@ -27,50 +27,50 @@ export const registerEmployee = async (req, res) => {
 
 export const getAllEmployees = async (req, res) => {
     try {
-        const employees = await Employee.find()
-        res.status(200).json(employees)
+        const employees = await Employee.find();
+        res.status(200).json(employees);
     } catch (error) {
-        console.error("Error fetching the Employees: ", error)
-        res.status(500).json({ message: error.message })
+        console.error("Error fetching the Employees: ", error);
+        res.status(500).json({ message: error.message });
     }
-}
+};
 
 
 export const getEmployeesById = async (req, res) => {
     try {
-        const employee = await Employee.findById(req.params._id)
-        if (!employee) return res.status(404).json({ message: "Employee not found" })
-        res.status(200).json(employee)
+        const employee = await Employee.findById(req.params._id);
+        if (!employee) return res.status(404).json({ message: "Employee not found" });
+        res.status(200).json(employee);
     } catch (error) {
-        console.error("Error fetching the Employees :", error)
-        res.status(500).json({ message: error.message })
+        console.error("Error fetching the Employees :", error);
+        res.status(500).json({ message: error.message });
     }
-}
+};
 
 
 export const updateEmployee = async (req, res) => {
     try {
-        const updatedEmployeeData = req.body
-        const employee = await Employee.findByIdAndUpdate(req.params.id, updatedEmployeeData, { new: true })
-        if (!employee) return res.status(404).json({ message: "Employee not found" })
-        res.status(200).json({ message: "Employee updated successfully!", employee })
+        const updatedEmployeeData = req.body;
+        const employee = await Employee.findByIdAndUpdate(req.params.id, updatedEmployeeData, { new: true });
+        if (!employee) return res.status(404).json({ message: "Employee not found" });
+        res.status(200).json({ message: "Employee updated successfully!", employee });
     } catch (error) {
-        console.error("Error updating the Employee: ", error)
-        res.status(500).json({ message: error.message })
+        console.error("Error updating the Employee: ", error);
+        res.status(500).json({ message: error.message });
     }
-}
+};
 
 
 export const deleteEmployee = async (req, res) => {
     try {
-        const employee = await Employee.findByIdAndDelete(req.params.id)
-        if (!employee) return res.status(404).json({ message: "Subject not found" })
-        res.status(200).json({ message: "Subject deleted successfully!" })
+        const employee = await Employee.findByIdAndDelete(req.params.id);
+        if (!employee) return res.status(404).json({ message: "Subject not found" });
+        res.status(200).json({ message: "Subject deleted successfully!" });
     } catch (error) {
-        console.error("Error deleted Employee")
-        res.status(200).json({ message: error.message })
+        console.error("Error deleted Employee");
+        res.status(200).json({ message: error.message });
     }
-}
+};
 
 
 export const employeeChangePassword = async (req, res) => {

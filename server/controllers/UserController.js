@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 import dotenv from 'dotenv';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
 
 dotenv.config();
 const userResetTokens = new Map();
@@ -43,7 +43,7 @@ export const extractUserFromToken = async (req) => {
     if (!user) throw new Error('User not found');
     return user;
   } catch (err) {
-    throw new Error('Invalid or expired token');
+    throw new Error('Invalid or expired token',err);
   }
 };
 
@@ -304,7 +304,7 @@ export const getAllComplaintsForGuest = async (req, res) => {
 };
 
 
-import fs from 'fs'
+import fs from 'fs';
 
 export const updateComplaint = async (req, res) => {
   try {
@@ -436,7 +436,7 @@ export const voteOnComplaint = async (req, res) => {
 };
 
 
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 
 export const forgotPassword = async (req, res) => {
   try {
@@ -467,7 +467,7 @@ export const forgotPassword = async (req, res) => {
       console.log(error);
       return res.status(500).json({ message: error.message });
   }
-}
+};
 
 
 const sendForgotPasswordEmail = async (user, password) => {
@@ -509,4 +509,4 @@ const sendForgotPasswordEmail = async (user, password) => {
       console.error('Error in email function:', error);
       throw new Error(error.message);  // Throw error to be caught in forgotPassword
   }
-}
+};

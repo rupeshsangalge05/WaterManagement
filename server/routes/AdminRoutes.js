@@ -6,7 +6,7 @@ const AdminRouter = express.Router();
 AdminRouter.get('/user/:status', getConnectionsByStatus);
 AdminRouter.patch('/user/approve/:id', approveConnection);
 AdminRouter.patch('/user/reject/:id', rejectConnection);
-AdminRouter.post('/user/:userId/generateBill', generateBillForUser)
+AdminRouter.post('/user/:userId/generateBill', generateBillForUser);
 AdminRouter.get('/user/:userId/bill', getUserBills);
 AdminRouter.get('/payments/:userId', getUserPayments);
 AdminRouter.get('/complaints', getAllComplaints);
