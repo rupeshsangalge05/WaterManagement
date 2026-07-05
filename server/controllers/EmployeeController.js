@@ -144,7 +144,7 @@ export const getAllUsers = async (req, res) => {
     const users = await User.find().select('-password'); // Exclude password
     res.status(200).json(users);
   } catch (err) {
-    res.status(500).json({ message: "Failed to fetch users." });
+    res.status(500).json({ message: "Failed to fetch users." }, err);
   }
 };
 
@@ -155,7 +155,7 @@ export const getSingleUser = async (req, res) => {
     if (!user) return res.status(404).json({ message: "User not found." });
     res.status(200).json(user);
   } catch (err) {
-    res.status(500).json({ message: "Failed to fetch user." });
+    res.status(500).json({ message: "Failed to fetch user." }, err);
   }
 };
 
