@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Form, Button, Container, Alert, Spinner, Row, Col, Nav } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -7,13 +7,12 @@ import axios from "axios";
 const Register = () => {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
 
-  // const [employee, setEmployee] = useState("");
-  const [setEmployee] = useState("");
+  const [employee, setEmployee] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [hover, setHover] = useState(false);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     setMessage("");

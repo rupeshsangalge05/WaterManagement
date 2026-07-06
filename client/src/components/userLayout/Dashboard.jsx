@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
-  Container, Row, Col, Card, Button, Alert, Spinner,
+  Container, Row, Col, Card, Button, ListGroup, Alert, Spinner,
   Modal, Form,
   Badge,
   Table
@@ -14,15 +14,12 @@ const UserDashboard = () => {
   const [user, setUser] = useState(null);
   const [bills, setBills] = useState([]);
   const [payments, setPayments] = useState([]);
-  // const [connections, setConnections] = useState([]);
-  const [setConnections] = useState([]);
-  // const [connectionHistory, setConnectionHistory] = useState([]);
-  const [setConnectionHistory] = useState([]);
+  const [connections, setConnections] = useState([]);
+  const [connectionHistory, setConnectionHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [successMessage, setSuccessMessage] = useState('');
   const [error, setError] = useState('');
-  // const [paying, setPaying] = useState({});
-  const [setPaying] = useState({});
+  const [paying, setPaying] = useState({});
   const [showModal, setShowModal] = useState(false);
   const [selectedBill, setSelectedBill] = useState(null);
 
@@ -54,7 +51,7 @@ const UserDashboard = () => {
     };
 
     fetchData();
-  });
+  }, []);
 
   const openPaymentModal = (bill) => {
     setSelectedBill(bill);

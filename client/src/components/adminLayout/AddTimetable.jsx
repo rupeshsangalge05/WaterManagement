@@ -1,27 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Table, Button, Form, Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
 
 const Timetable = () => {
-  // const [timetables, setTimetables] = useState([]);
-  const [timetables] = useState([]);
+  const [timetables, setTimetables] = useState([]);
   const [formData, setFormData] = useState({ day: "", morning: "", wardNo: "" });
   const [editingId, setEditingId] = useState(null);
   const [alert, setAlert] = useState({ show: false, message: "", variant: "success" });
 
-  // const fetchTimetables = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:5000/timetable");
-  //     setTimetables(response.data);
-  //   } catch (error) {
-  //     showAlert("Error fetching timetable", "danger");
-  //     console.error("Error fetching timetable:", error);
-  //   }
-  // };
+  const fetchTimetables = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/timetable");
+      setTimetables(response.data);
+    } catch (error) {
+      showAlert("Error fetching timetable", "danger");
+      console.error("Error fetching timetable:", error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchTimetables();
-  // }, []);
+  useEffect(() => {
+    fetchTimetables();
+  }, []);
 
   const showAlert = (message, variant = "success") => {
     setAlert({ show: true, message, variant });
@@ -40,7 +39,7 @@ const Timetable = () => {
       }
       setFormData({ day: "", morning: "", wardNo: "" });
       setEditingId(null);
-      // fetchTimetables();
+      fetchTimetables();
     } catch (error) {
       showAlert("Error saving timetable", "danger");
       console.error("Error saving timetable:", error);
@@ -57,7 +56,7 @@ const Timetable = () => {
       try {
         await axios.delete(`http://localhost:5000/timetable/${id}`);
         showAlert("Timetable deleted successfully!");
-        // fetchTimetables();
+        fetchTimetables();
       } catch (error) {
         showAlert("Error deleting timetable", "danger");
         console.error("Error deleting timetable:", error);

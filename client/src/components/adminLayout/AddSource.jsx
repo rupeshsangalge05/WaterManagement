@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Container, Alert, Row, Col, Image, Spinner, Table, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const API_BASE_URL = "http://localhost:5000";
 const MIN_FILES = 2;
 const MAX_FILES = 2;
 
 const WaterSourceForm = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [loading, setLoading] = useState(false);

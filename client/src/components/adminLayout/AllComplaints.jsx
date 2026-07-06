@@ -1,34 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, Table, Alert, Button, Image, Spinner, Form } from 'react-bootstrap';
+import { Container, Table, Alert, Button, Image, Spinner, Form, Row, Col } from 'react-bootstrap';
 
 const AllComplaints = () => {
-  // const [complaints, setComplaints] = useState([]);
-  const [complaints] = useState([]);
-  // const [loading, setLoading] = useState(true);
-  const [loading] = useState(true);
+  const [complaints, setComplaints] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const [inputs, setInputs] = useState({});
   const token = localStorage.getItem('jwtToken');
 
-  // const fetchComplaints = async () => {
-  //   try {
-  //     const { data } = await axios.get('http://localhost:5000/user/complaintForAdmin', {
-  //       headers: { Authorization: `Bearer ${token}` }
-  //     });
-  //     setComplaints(Array.isArray(data) ? data : []);
-  //   } catch (err) {
-  //     console.error(err);
-  //     setError('Failed to fetch complaints.');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  const fetchComplaints = async () => {
+    try {
+      const { data } = await axios.get('http://localhost:5000/user/complaintForAdmin', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setComplaints(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.error(err);
+      setError('Failed to fetch complaints.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchComplaints();
-  // }, []);
+  useEffect(() => {
+    fetchComplaints();
+  }, []);
 
   const handleSubmit = async (e, id) => {
     e.preventDefault();
@@ -52,7 +50,7 @@ const AllComplaints = () => {
         ...prev,
         [id]: { response: '', status: 'Pending' }
       }));
-      // fetchComplaints();
+      fetchComplaints();
     } catch (err) {
       console.error(err);
       setError('Failed to submit response.');

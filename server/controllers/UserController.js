@@ -195,7 +195,7 @@ export const changePassword = async (req, res) => {
   }
 };
 
-// import { randomBytes } from 'crypto';
+import { randomBytes } from 'crypto';
 
 export const resetPassword = async (req, res) => {
   const { resetToken, newPassword } = req.body;

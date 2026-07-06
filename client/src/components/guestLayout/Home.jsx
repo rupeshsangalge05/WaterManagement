@@ -10,7 +10,7 @@ import Counter from './Counter';
 import Services from './Services';
 import WaterSources from './WaterSources';
 import Timetable from './TimeTable';
-// import WaterQualityChart from './WaterQuality';
+import WaterQualityChart from './WaterQuality';
 
 const Home = () => {
   const location = useLocation();

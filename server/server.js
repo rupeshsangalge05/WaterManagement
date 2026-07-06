@@ -59,11 +59,11 @@ const profileStorage = multer.diskStorage({
 });
 const profileUpload = multer({ storage: profileStorage });
 
-// const complaintStorage = multer.diskStorage({
-//   destination: (_, __, cb) => cb(null, complaintUploadDirectory),
-//   filename: (_, file, cb) => cb(null, Date.now() + '-' + file.originalname)
-// });
-// const complaintUpload = multer({ storage: complaintStorage }, complaintUpload.single('file'));
+const complaintStorage = multer.diskStorage({
+  destination: (_, __, cb) => cb(null, complaintUploadDirectory),
+  filename: (_, file, cb) => cb(null, Date.now() + '-' + file.originalname)
+});
+const complaintUpload = multer({ storage: complaintStorage });
 
 // Serve Static Uploads
 app.use('/uploads', express.static(baseUploadDirectory));
