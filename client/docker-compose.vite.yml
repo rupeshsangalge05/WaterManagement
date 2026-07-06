@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  frontend-vite:
+    build:
+      context: .
+      dockerfile: Dockerfile.vite.full
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    container_name: mern-frontend-vite
+
+  # Uncomment to connect to backend
+  # backend:
+  #   build: ../server
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - MONGODB_URI=mongodb://mongo:27017/mern
+  #   depends_on:
+  #     - mongo
+  #
+  # mongo:
+  #   image: mongo:7-alpine
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo_data:/data/db
+  #
+  # volumes:
+  #   mongo_data:

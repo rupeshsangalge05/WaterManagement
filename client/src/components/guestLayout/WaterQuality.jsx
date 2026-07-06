@@ -59,7 +59,7 @@ export default function WaterQualityChart({ sourceId, year }) {
 
   useEffect(() => {
     fetchData();
-  }, [sourceId, year, useDummy]);
+  });
 
   return (
     <div className="w-full max-w-4xl mx-auto py-6">

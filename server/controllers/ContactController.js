@@ -1,4 +1,4 @@
-import Contact from '../models/Contact.js'
+import Contact from '../models/Contact.js';
 
 export const createContact = async (req, res) => {
   try {
@@ -25,13 +25,13 @@ export const createContact = async (req, res) => {
 
 export const getContacts = async (req, res) => {
   try {
-    const contacts = await Contact.find()
+    const contacts = await Contact.find();
     // const contacts = await Contact.find().sort({ crearedAt: -1 })
     // console.log(contacts)
-    if (!contacts) res.status(400).json({ message: "Contact not found" })
+    if (!contacts) res.status(400).json({ message: "Contact not found" });
 
-    res.status(200).json({contacts})
+    res.status(200).json({contacts});
   } catch (error) {
-    res.status(500).json({ message: "Server error", error })
+    res.status(500).json({ message: "Server error", error });
   }
-}
+};

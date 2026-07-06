@@ -20,7 +20,7 @@ const Timetable = () => {
 
   useEffect(() => {
     fetchTimetables();
-  }, []);
+  });
 
   const showAlert = (message, variant = "success") => {
     setAlert({ show: true, message, variant });
