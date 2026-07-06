@@ -16,7 +16,7 @@ const AdminConnections = () => {
   const [units, setUnits] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showRejectModal, setShowRejectModal] = useState(false);
+  // const [showRejectModal, setShowRejectModal] = useState(false);
   const [showBillModal, setShowBillModal] = useState(false);
   const [currentConnection, setCurrentConnection] = useState(null);
   const [rejectionReason, setRejectionReason] = useState('');
@@ -62,20 +62,20 @@ const AdminConnections = () => {
     }
   };
 
-  const handleReject = async () => {
-    try {
-      const response = await axios.patch(
-        `http://localhost:5000/admin/user/reject/${currentConnection._id}`,
-        { reason: rejectionReason }
-      );
-      setSuccessMessage(response.data.message);
-      setShowRejectModal(false);
-      setRejectionReason('');
-      fetchConnections();
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to reject connection');
-    }
-  };
+  // const handleReject = async () => {
+  //   try {
+  //     const response = await axios.patch(
+  //       `http://localhost:5000/admin/user/reject/${currentConnection._id}`,
+  //       { reason: rejectionReason }
+  //     );
+  //     setSuccessMessage(response.data.message);
+  //     setShowRejectModal(false);
+  //     setRejectionReason('');
+  //     fetchConnections();
+  //   } catch (err) {
+  //     setError(err.response?.data?.message || 'Failed to reject connection');
+  //   }
+  // };
 
   const handleGenerateBill = async () => {
     if (isNaN(units) || units <= 0) {
@@ -83,7 +83,7 @@ const AdminConnections = () => {
       setTimeout(() => setError(''), 3000);
       return;
     }
-    const amount = units * 10;
+    // const amount = units * 10;
     try {
       const response = await axios.post(`http://localhost:5000/admin/user/${currentConnection._id}/generateBill`,
         { units, dueDate } // Pass units here
@@ -130,7 +130,7 @@ const AdminConnections = () => {
             <PendingConnections connections={connections.PENDING} onApprove={handleApprove}
               onReject={(conn) => {
                 setCurrentConnection(conn);
-                setShowRejectModal(true);
+                // setShowRejectModal(true);
               }}
               error={error} />
           </Tab>

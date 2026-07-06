@@ -1,32 +1,33 @@
 import { useState } from 'react';
-import { Table, Badge, Modal, Form, Button } from 'react-bootstrap';
+import { Table, Badge } from 'react-bootstrap';
 import axios from 'axios';
 
 const RejectedConnections = ({ connections, refreshConnections }) => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  const [setShowModal] = useState(false);
   const [selectedConnection, setSelectedConnection] = useState(null);
   const [rejectionReason, setRejectionReason] = useState('');
 
-  const handleOpenModal = (conn) => {
-    setSelectedConnection(conn);
-    setRejectionReason(conn.rejectionReason || '');
-    setShowModal(true);
-  };
+  // const handleOpenModal = (conn) => {
+  //   setSelectedConnection(conn);
+  //   setRejectionReason(conn.rejectionReason || '');
+  //   setShowModal(true);
+  // };
 
-  const handleSubmit = async () => {
-    if (!selectedConnection || !rejectionReason.trim()) return;
+  // const handleSubmit = async () => {
+  //   if (!selectedConnection || !rejectionReason.trim()) return;
 
-    try {
-      await axios.patch(`http://localhost:5000/admin/connections/reject/${selectedConnection._id}`, {
-        reason: rejectionReason,
-      });
-      setShowModal(false);
-      setRejectionReason('');
-      refreshConnections(); // refresh parent state
-    } catch (error) {
-      console.error('Failed to update rejection reason:', error);
-    }
-  };
+  //   try {
+  //     await axios.patch(`http://localhost:5000/admin/connections/reject/${selectedConnection._id}`, {
+  //       reason: rejectionReason,
+  //     });
+  //     setShowModal(false);
+  //     setRejectionReason('');
+  //     refreshConnections(); // refresh parent state
+  //   } catch (error) {
+  //     console.error('Failed to update rejection reason:', error);
+  //   }
+  // };
 
   return (
     <div className="table-responsive">

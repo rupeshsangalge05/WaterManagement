@@ -7,11 +7,11 @@ const RejectedEmployees = ({ employees, refreshEmployees }) => {
   const [currentEmployee, setCurrentEmployee] = useState(null);
   const [rejectionReason, setRejectionReason] = useState('');
 
-  const handleOpenModal = (employee) => {
-    setCurrentEmployee(employee);
-    setRejectionReason(employee.rejectionReason || '');
-    setShowRejectModal(true);
-  };
+  // const handleOpenModal = (employee) => {
+  //   setCurrentEmployee(employee);
+  //   setRejectionReason(employee.rejectionReason || '');
+  //   setShowRejectModal(true);
+  // };
 
   const handleSubmitReason = async () => {
     if (!currentEmployee || !rejectionReason.trim()) return;

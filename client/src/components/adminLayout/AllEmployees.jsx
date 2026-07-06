@@ -10,7 +10,7 @@ const AdminEmployees = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
-  const [showRejectModal, setShowRejectModal] = useState(false);
+  // const [showRejectModal, setShowRejectModal] = useState(false);
   const [currentEmployee, setCurrentEmployee] = useState(null);
   const [rejectionReason, setRejectionReason] = useState('');
 
@@ -54,7 +54,7 @@ const AdminEmployees = () => {
         reason: rejectionReason,
       });
       setSuccessMessage(res.data.message);
-      setShowRejectModal(false);
+      // setShowRejectModal(false);
       setRejectionReason('');
       fetchEmployees();
     } catch (err) {
@@ -82,7 +82,7 @@ const AdminEmployees = () => {
               onApprove={handleApprove}
               onReject={(emp) => {
                 setCurrentEmployee(emp);
-                setShowRejectModal(true);
+                // setShowRejectModal(true);
               }}
             />
           </Tab>

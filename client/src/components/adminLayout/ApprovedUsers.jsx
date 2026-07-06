@@ -18,7 +18,7 @@ const ApprovedConnections = ({ connections, onGenerateBill }) => {
     FAILED: 'danger',
   };
 
-  const getPaymentStatusVariant = (status) => paymentStatusVariant[status] || paymentStatusVariant.PENDING;
+  // const getPaymentStatusVariant = (status) => paymentStatusVariant[status] || paymentStatusVariant.PENDING;
 
   // Function to handle "View Payments" button click
   const handleViewPayments = async (userId) => {
