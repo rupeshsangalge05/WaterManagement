@@ -11,7 +11,7 @@ const GenerateBillModal = ({ show, onHide, connection, units, setUnits, billAmou
     } else {
       setBillAmount('');
     }
-  }, [units]);
+  } );
 
   const isSubmitDisabled = !units || !billAmount || !dueDate || isNaN(billAmount);
 

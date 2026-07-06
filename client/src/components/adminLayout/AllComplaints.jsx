@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, Table, Alert, Button, Image, Spinner, Form, Row, Col } from 'react-bootstrap';
+import { Container, Table, Alert, Button, Image, Spinner, Form } from 'react-bootstrap';
 
 const AllComplaints = () => {
   const [complaints, setComplaints] = useState([]);
@@ -26,7 +26,7 @@ const AllComplaints = () => {
 
   useEffect(() => {
     fetchComplaints();
-  }, []);
+  });
 
   const handleSubmit = async (e, id) => {
     e.preventDefault();

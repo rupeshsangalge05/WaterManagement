@@ -1,5 +1,5 @@
 // ViewPaymentsModal.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Table, Button, Badge, Alert } from 'react-bootstrap';
 
 const ViewPaymentsModal = ({ show, onHide, paymentHistory=[], userName, userEmail, userContact }) => {
