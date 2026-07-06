@@ -34,6 +34,9 @@ import AdminHome from './components/adminLayout/Home';
 import Timetable from './components/adminLayout/AddTimetable';
 
 function App() {
+
+  let rupesh = "RupeshSangalge";
+
   return (
     <div>
       <Routes>
