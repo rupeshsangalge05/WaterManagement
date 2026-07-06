@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const RejectedEmployees = ({ employees, refreshEmployees }) => {
   const [showRejectModal, setShowRejectModal] = useState(false);
-  const [currentEmployee, setCurrentEmployee] = useState(null);
+  // const [currentEmployee, setCurrentEmployee] = useState(null);
+  const [currentEmployee] = useState(null);
   const [rejectionReason, setRejectionReason] = useState('');
 
   // const handleOpenModal = (employee) => {

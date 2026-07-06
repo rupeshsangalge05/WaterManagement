@@ -1,8 +1,8 @@
 import React from 'react';
 import { Carousel, Container } from 'react-bootstrap';
-import slider1 from './slider1.webp'
-import slider2 from './slider2.webp'
-import slider3 from './slider3.webp'
+// import slider1 from './slider1.webp'
+// import slider2 from './slider2.webp'
+// import slider3 from './slider3.webp'
 
 const carouselItems = [
   {

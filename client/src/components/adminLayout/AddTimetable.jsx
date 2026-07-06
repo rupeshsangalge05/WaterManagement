@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Table, Button, Form, Row, Col, Alert } from "react-bootstrap";
 import axios from "axios";
 
 const Timetable = () => {
-  const [timetables, setTimetables] = useState([]);
+  // const [timetables, setTimetables] = useState([]);
+  const [timetables] = useState([]);
   const [formData, setFormData] = useState({ day: "", morning: "", wardNo: "" });
   const [editingId, setEditingId] = useState(null);
   const [alert, setAlert] = useState({ show: false, message: "", variant: "success" });

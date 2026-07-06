@@ -19,7 +19,7 @@ const AdminConnections = () => {
   // const [showRejectModal, setShowRejectModal] = useState(false);
   const [showBillModal, setShowBillModal] = useState(false);
   const [currentConnection, setCurrentConnection] = useState(null);
-  const [rejectionReason, setRejectionReason] = useState('');
+  // const [rejectionReason, setRejectionReason] = useState('');
   const [billAmount, setBillAmount] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [successMessage, setSuccessMessage] = useState(null);

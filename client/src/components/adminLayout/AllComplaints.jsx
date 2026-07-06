@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Table, Alert, Button, Image, Spinner, Form } from 'react-bootstrap';
 
 const AllComplaints = () => {
-  const [complaints, setComplaints] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [complaints, setComplaints] = useState([]);
+  const [complaints] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  const [loading] = useState(true);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
   const [inputs, setInputs] = useState({});

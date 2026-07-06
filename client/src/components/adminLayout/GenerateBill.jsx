@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 
 const GenerateBillModal = ({ show, onHide, connection, units, setUnits, billAmount, dueDate, setDueDate, onSubmit }) => { 
-  const ratePerUnit = 10;
+  // const ratePerUnit = 10;
 
   // useEffect(() => {
   //   // Only calculate bill amount if units is a valid number

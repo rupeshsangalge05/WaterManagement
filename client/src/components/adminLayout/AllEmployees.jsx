@@ -48,19 +48,19 @@ const AdminEmployees = () => {
     }
   };
 
-  const handleReject = async () => {
-    try {
-      const res = await axios.patch(`http://localhost:5000/admin/employee/reject/${currentEmployee._id}`, {
-        reason: rejectionReason,
-      });
-      setSuccessMessage(res.data.message);
-      // setShowRejectModal(false);
-      setRejectionReason('');
-      fetchEmployees();
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to reject employee');
-    }
-  };
+  // const handleReject = async () => {
+  //   try {
+  //     const res = await axios.patch(`http://localhost:5000/admin/employee/reject/${currentEmployee._id}`, {
+  //       reason: rejectionReason,
+  //     });
+  //     setSuccessMessage(res.data.message);
+  //     // setShowRejectModal(false);
+  //     setRejectionReason('');
+  //     fetchEmployees();
+  //   } catch (err) {
+  //     setError(err.response?.data?.message || 'Failed to reject employee');
+  //   }
+  // };
 
   useEffect(() => {
     fetchEmployees();

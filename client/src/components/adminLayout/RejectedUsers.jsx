@@ -1,12 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Table, Badge } from 'react-bootstrap';
-import axios from 'axios';
+// import axios from 'axios';
 
 const RejectedConnections = ({ connections, refreshConnections }) => {
   // const [showModal, setShowModal] = useState(false);
-  const [setShowModal] = useState(false);
-  const [selectedConnection, setSelectedConnection] = useState(null);
-  const [rejectionReason, setRejectionReason] = useState('');
+  // const [setShowModal] = useState(false);
+  // const [selectedConnection, setSelectedConnection] = useState(null);
+  // const [rejectionReason, setRejectionReason] = useState('');
 
   // const handleOpenModal = (conn) => {
   //   setSelectedConnection(conn);
