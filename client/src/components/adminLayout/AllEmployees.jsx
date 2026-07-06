@@ -12,8 +12,9 @@ const AdminEmployees = () => {
   const [successMessage, setSuccessMessage] = useState(null);
   // const [showRejectModal, setShowRejectModal] = useState(false);
   const [setShowRejectModal] = useState(false);
-  const [currentEmployee, setCurrentEmployee] = useState(null);
-  const [rejectionReason, setRejectionReason] = useState('');
+  // const [currentEmployee, setCurrentEmployee] = useState(null);
+  const [setCurrentEmployee] = useState(null);
+  // const [rejectionReason, setRejectionReason] = useState('');
 
   const fetchEmployees = async () => {
     try {

@@ -11,12 +11,12 @@ const ApprovedConnections = ({ connections, onGenerateBill }) => {
   const [userContact, setUserContact] = useState('');
 
 
-  const paymentStatusVariant = {
-    PENDING: 'warning',
-    PAID: 'success',
-    OVERDUE: 'danger',
-    FAILED: 'danger',
-  };
+  // const paymentStatusVariant = {
+  //   PENDING: 'warning',
+  //   PAID: 'success',
+  //   OVERDUE: 'danger',
+  //   FAILED: 'danger',
+  // };
 
   // const getPaymentStatusVariant = (status) => paymentStatusVariant[status] || paymentStatusVariant.PENDING;
 
